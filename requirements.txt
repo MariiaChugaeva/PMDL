@@ -1,0 +1,13 @@
+tensorflow==2.12.0
+numpy
+pandas
+scikit-learn
+mlflow
+dvc
+streamlit
+streamlit-drawable-canvas
+fastapi
+uvicorn[standard]
+requests
+Pillow
+pydantic

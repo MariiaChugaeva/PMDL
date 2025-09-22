@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/user/PMDL/code/models/mlruns/827576811653570568/models/m-70de0104c23f4b639cefbb33abf8120a/artifacts
+creation_timestamp: 1758510187501
+experiment_id: '827576811653570568'
+last_updated_timestamp: 1758510570094
+model_id: m-70de0104c23f4b639cefbb33abf8120a
+model_type: null
+name: model
+source_run_id: 10960eef137b40b59ba186fe41ec8e0d
+status: 2
+status_message: null

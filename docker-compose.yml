@@ -1,21 +1,34 @@
-version: '3.8'
+version: "3.9"
+
 services:
-  api:
+  fastapi:
     build:
-      context: ./code/deployment/api
-      dockerfile: Dockerfile
-    container_name: digit_api
+      context: .                      # repo root
+      dockerfile: code/deployment/api/Dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
     ports:
       - "8000:8000"
-    restart: unless-stopped
+    command: uvicorn code.deployment.api.main:app --host 0.0.0.0 --port 8000 --reload
 
-  app:
+  streamlit:
     build:
-      context: ./code/deployment/app
-      dockerfile: Dockerfile
-    container_name: digit_app
+      context: .                      # repo root
+      dockerfile: code/deployment/app/Dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
     ports:
       - "8501:8501"
-    depends_on:
-      - api
-    restart: unless-stopped
+    command: streamlit run code/deployment/app/app.py --server.port=8501 --server.address=0.0.0.0
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.14.1
+    environment:
+      - MLFLOW_TRACKING_URI=/mlruns
+    volumes:
+      - ./mlruns:/mlruns
+    ports:
+      - "5000:5000"
+    command: mlflow server --backend-store-uri /mlruns --host 0.0.0.0 --port 5000

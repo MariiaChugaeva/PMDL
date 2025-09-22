@@ -1,0 +1,6 @@
+artifact_location: file:///C:/Users/user/PMDL/code/models/mlruns/827576811653570568
+creation_time: 1758510186919
+experiment_id: '827576811653570568'
+last_update_time: 1758510186919
+lifecycle_stage: active
+name: mnist_digit_recognizer

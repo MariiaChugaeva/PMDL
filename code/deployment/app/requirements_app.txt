@@ -1,5 +1,6 @@
-streamlit
-streamlit-drawable-canvas
-requests
-pillow
+streamlit==1.38.0
 numpy
+pandas
+Pillow
+requests
+streamlit-drawable-canvas

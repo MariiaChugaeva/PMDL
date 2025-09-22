@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/user/PMDL/code/models/mlruns/827576811653570568/10960eef137b40b59ba186fe41ec8e0d/artifacts
+end_time: 1758510570126
+entry_point_name: ''
+experiment_id: '827576811653570568'
+lifecycle_stage: active
+run_id: 10960eef137b40b59ba186fe41ec8e0d
+run_name: cnn_augmented
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758510187355
+status: 3
+tags: []
+user_id: user

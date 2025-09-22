@@ -1,0 +1,28 @@
+artifact_path: file:///C:/Users/user/PMDL/code/models/mlruns/827576811653570568/models/m-70de0104c23f4b639cefbb33abf8120a/artifacts
+flavors:
+  keras:
+    data: data
+    keras_backend: tensorflow
+    keras_version: 3.11.3
+    save_exported_model: false
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.keras
+    python_version: 3.13.3
+is_signature_from_type_hint: false
+mlflow_version: 3.3.2
+model_id: m-70de0104c23f4b639cefbb33abf8120a
+model_size_bytes: 4775345
+model_uuid: m-70de0104c23f4b639cefbb33abf8120a
+prompts: null
+run_id: 10960eef137b40b59ba186fe41ec8e0d
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1, 28,
+    28, 1]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1,
+    10]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-09-22 03:09:14.146701'
