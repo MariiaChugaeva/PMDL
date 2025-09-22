@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./code/deployment/api
+      dockerfile: Dockerfile
+    container_name: digit_api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  app:
+    build:
+      context: ./code/deployment/app
+      dockerfile: Dockerfile
+    container_name: digit_app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    restart: unless-stopped
