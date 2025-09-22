@@ -37,7 +37,7 @@ docker-compose down
 
 ---
 
-## ✨ Getting a prediction
+## ✨ Getting A Prediction
 
 ### Streamlit UI
 
