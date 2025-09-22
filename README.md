@@ -88,19 +88,19 @@ PMDL/
 │   │   ├── api/
 │   │   │   ├── __pycache__/
 │   │   │   ├── main.py
-│   │   │   └── requirements_api.txt
+│   │   │   ├── requirements_api.txt
+│   │   │   └── Dockerfile  # for api
 │   │   ├── app/
 │   │   │   ├── app.py
-│   │   │   └── requirements_app.txt
-│   │   ├── Dockerfile  # для api
-│   │   └── Dockerfile  # для app (возможно в app/)
+│   │   │   ├── requirements_app.txt
+│   │   │   └── Dockerfile  # for app
 │   └── models/
 │       └── train_digits.py
 ├── data/
 ├── docs/
 ├── dvcstore/
-├── mlruns/  # корневая MLflow директория
-├── models/  # сохраненные модели
+├── mlruns/  # root MLflow directory
+├── models/  # saved models
 ├── services/
 │   └── airflow/
 │       └── dags/
