@@ -2,11 +2,14 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY code/deployment/api/requirements_api.txt /app/requirements_api.txt
-RUN pip install --no-cache-dir -r requirements_api.txt
+# Copy requirements first for better caching
+COPY code/deployment/api/requirements_api.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY code/deployment/api/main.py /app/main.py
-COPY models/digit_recognizer_cnn.h5 /app/models/digit_recognizer_cnn.h5
+# Copy the entire code structure
+COPY code /app/code
 
 EXPOSE 8000
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# Run from the correct directory context
+CMD ["uvicorn", "code.deployment.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -14,13 +14,15 @@ services:
 
   streamlit:
     build:
-      context: .                      # repo root
+      context: .
       dockerfile: code/deployment/app/Dockerfile
     working_dir: /app
     volumes:
       - .:/app
     ports:
       - "8501:8501"
+    environment:
+      - DIGIT_API_URL=http://fastapi:8000/predict  # Add this line
     command: streamlit run code/deployment/app/app.py --server.port=8501 --server.address=0.0.0.0
 
   mlflow:

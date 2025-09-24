@@ -8,7 +8,7 @@ import os
 import io
 import pandas as pd
 
-API_URL = os.environ.get("DIGIT_API_URL", "http://localhost:8000/predict")
+API_URL = os.environ.get("DIGIT_API_URL", "http://fastapi:8000/predict")
 
 st.set_page_config(page_title="Digit Recognizer", layout="wide")
 
